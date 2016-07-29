@@ -30,7 +30,7 @@
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <Content Include="Templates\KeyVault.json" />
-    <Content Include="Templates\KeyVault.parameters.json" />
+    <Content Include="Templates\KeyVault.dev.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
