@@ -19,6 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.Media.MediaProperties;
 using SharedProject;
+using Windows.Devices.Enumeration;
 
 
 
@@ -35,22 +36,64 @@ namespace EpicEvalsWindows
         private BitmapImage _bmpImage = null;
         private StorageFile _file = null;
         private bool _isCaptureMode = true;
+        private int currentCameraIndex = 0;
+        DeviceInformation cameraDevice;
+        DeviceInformationCollection devices;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.Loaded += MainPage_Loaded;
+
+            
+        }
+
+        private async Task InitCameraSwitch()
+        {
+            devices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+
+            if (devices.Count > 0)
+            {
+                if (devices.Count >= 2)
+                {
+                    cameraSwitch.Visibility = Visibility.Visible;
+                    cameraSwitch.Click += CameraSwitch_Click;
+                    currentCameraIndex = 0;
+                    cameraDevice = devices.FirstOrDefault(d => d.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
+                }
+            }
+        }
+
+        private async void CameraSwitch_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentCameraIndex == 0)
+            {
+                cameraDevice = devices[1];
+                currentCameraIndex = 1;
+            }
+            else
+            {
+                cameraDevice = devices[0];
+                currentCameraIndex = 0;
+            }
+
+            await InitMediaCapture();
         }
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            await InitCameraSwitch();
             await InitMediaCapture();
         }
 
         private async Task<bool> InitMediaCapture()
         {
             _captureManager = new MediaCapture();
-            await _captureManager.InitializeAsync();
+            await _captureManager.InitializeAsync(new MediaCaptureInitializationSettings()
+            {
+                VideoDeviceId = cameraDevice.Id
+            }
+                );
 
             captureElement.Source = _captureManager;
             captureElement.FlowDirection = FlowDirection.RightToLeft;
