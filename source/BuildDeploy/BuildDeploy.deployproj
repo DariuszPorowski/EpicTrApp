@@ -32,6 +32,7 @@
     <Content Include="Templates\KeyVault.json" />
     <Content Include="Templates\KeyVault.parameters.json" />
     <None Include="Scripts\Test-AzureRGKeyVault.ps1" />
+    <None Include="Templates\ServiceFabric.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
