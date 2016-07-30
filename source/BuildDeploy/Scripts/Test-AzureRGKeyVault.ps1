@@ -3,7 +3,7 @@
 #
 Param(
     [Parameter(Mandatory = $true)]
-    [ValidatePattern("^[a-z0-9]*$")]
+    [ValidatePattern("^[a-zA-Z0-9-_]*$")]
     [String]$ResourceGroup  
 )
 
