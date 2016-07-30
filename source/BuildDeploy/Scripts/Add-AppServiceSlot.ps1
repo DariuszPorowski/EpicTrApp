@@ -1,5 +1,5 @@
 #
-# Add slot to AppService Web Site
+# Add deployment slot to AppService
 #
 
 Param(
@@ -15,4 +15,5 @@ Param(
     [String]$Slot
 )
 
+Write-Output "Adding $Slot slot to $WebAppName app in $ResourceGroupName resource group."
 New-AzureRmWebAppSlot -Name $WebAppName -ResourceGroupName $ResourceGroupName -Slot $Slot

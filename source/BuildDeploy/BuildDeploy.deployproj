@@ -31,8 +31,11 @@
     <Content Include="Scripts\Deploy-AzureResourceGroup.ps1" />
     <Content Include="Templates\KeyVault.json" />
     <Content Include="Templates\KeyVault.parameters.json" />
+    <None Include="Scripts\Add-AppServiceSlot.ps1" />
     <None Include="Scripts\Add-KeyVaultSecret.ps1" />
     <None Include="Scripts\Test-AzureRGKeyVault.ps1" />
+    <None Include="Templates\AppService.json" />
+    <None Include="Templates\AppService.parameters.json" />
     <None Include="Templates\ServiceFabric.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
