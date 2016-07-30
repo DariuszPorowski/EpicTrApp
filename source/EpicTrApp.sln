@@ -15,13 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRService", "TRService\TRSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicAppModels", "EpicAppModels\EpicAppModels.csproj", "{819ED1AC-758F-49C3-8A1C-2143AF87F35B}"
 EndProject
-<<<<<<< HEAD
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "BuildDeploy", "BuildDeploy\BuildDeploy.deployproj", "{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}"
-=======
+EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedProject", "SharedProject\SharedProject.shproj", "{B71AA219-E266-4B64-90B6-D762CF69A7FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicEvalsWindows", "EpicEvalsWindows\EpicEvalsWindows.csproj", "{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}"
->>>>>>> brents
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -30,11 +28,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-<<<<<<< HEAD
-		Debug|x64 = Debug|x64
-		Release|Any CPU = Release|Any CPU
-		Release|x64 = Release|x64
-=======
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
@@ -42,38 +35,32 @@ Global
 		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
->>>>>>> brents
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Debug|ARM.ActiveCfg = Debug|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Debug|x64.ActiveCfg = Debug|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Debug|x64.Build.0 = Debug|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Debug|x64.Deploy.0 = Debug|x64
+		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Debug|x86.ActiveCfg = Debug|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Release|Any CPU.ActiveCfg = Release|x64
+		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Release|ARM.ActiveCfg = Release|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Release|x64.ActiveCfg = Release|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Release|x64.Build.0 = Release|x64
 		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Release|x64.Deploy.0 = Release|x64
+		{FD08DB80-C25F-419C-A3F9-748FF35F1384}.Release|x86.ActiveCfg = Release|x64
 		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Debug|ARM.ActiveCfg = Debug|x64
 		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Debug|x64.ActiveCfg = Debug|x64
 		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Debug|x64.Build.0 = Debug|x64
+		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Debug|x86.ActiveCfg = Debug|x64
 		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Release|Any CPU.ActiveCfg = Release|x64
+		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Release|ARM.ActiveCfg = Release|x64
 		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Release|x64.ActiveCfg = Release|x64
 		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Release|x64.Build.0 = Release|x64
+		{832A618F-231C-4ABD-85C3-865BA4A106C1}.Release|x86.ActiveCfg = Release|x64
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-<<<<<<< HEAD
-		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
-		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Release|x64.ActiveCfg = Release|Any CPU
-=======
-		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> origin/dev
-=======
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Debug|ARM.Build.0 = Debug|Any CPU
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -88,6 +75,16 @@ Global
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Release|x64.Build.0 = Release|Any CPU
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Release|x86.ActiveCfg = Release|Any CPU
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B}.Release|x86.Build.0 = Release|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|x64.ActiveCfg = Release|Any CPU
+		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B}.Release|x86.ActiveCfg = Release|Any CPU
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}.Debug|ARM.ActiveCfg = Debug|ARM
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}.Debug|ARM.Build.0 = Debug|ARM
@@ -108,18 +105,13 @@ Global
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}.Release|x86.ActiveCfg = Release|x86
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}.Release|x86.Build.0 = Release|x86
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC}.Release|x86.Deploy.0 = Release|x86
->>>>>>> brents
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{819ED1AC-758F-49C3-8A1C-2143AF87F35B} = {9B33DA97-B439-4E82-BB17-FEB236E731AD}
-<<<<<<< HEAD
-		{0BDF92BE-A1EE-4841-AD9F-8AED41E4D92B} = {9B33DA97-B439-4E82-BB17-FEB236E731AD}
-=======
 		{B71AA219-E266-4B64-90B6-D762CF69A7FA} = {9B33DA97-B439-4E82-BB17-FEB236E731AD}
 		{D6D50BA6-AF8D-49CD-99E6-194D899CC0EC} = {9B33DA97-B439-4E82-BB17-FEB236E731AD}
->>>>>>> brents
 	EndGlobalSection
 EndGlobal
