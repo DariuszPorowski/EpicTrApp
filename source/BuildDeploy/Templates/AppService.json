@@ -1,6 +1,6 @@
 {
   "parameters":{
-    "name":{
+    "appName":{
       "defaultValue":"EpicTrApp",
       "type":"string"
     },
@@ -21,15 +21,15 @@
     "location":"[resourceGroup().location]",
     "subscriptionId":"[subscription().subscriptionId]",
     "serverFarmResourceGroup":"[resourceGroup().name]",
-    "hostingPlanName":"[parameters('name')]"
+    "hostingPlanName":"[parameters('appName')]"
   },
   "resources":[
     {
       "apiVersion":"[variables('apiVersion')]",
-      "name":"[parameters('name')]",
+      "name":"[parameters('appName')]",
       "type":"Microsoft.Web/sites",
       "properties":{
-        "name":"[parameters('name')]",
+        "name":"[parameters('appName')]",
         "serverFarmId":"[concat('/subscriptions/', variables('subscriptionId'),'/resourcegroups/', variables('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]"
       },
       "resources":[
@@ -38,10 +38,10 @@
           "type":"providers/links",
           "name":"Microsoft.Resources/sites",
           "dependsOn":[
-            "[resourceId('microsoft.web/sites', parameters('name'))]"
+            "[resourceId('microsoft.web/sites', parameters('appName'))]"
           ],
           "properties":{
-            "targetId":"[resourceId('microsoft.insights/components', parameters('name'))]"
+            "targetId":"[resourceId('microsoft.insights/components', parameters('appName'))]"
           }
         }
       ],
@@ -67,17 +67,17 @@
     },
     {
       "apiVersion":"[variables('apiVersionInsights')]",
-      "name":"[parameters('name')]",
+      "name":"[parameters('appName')]",
       "type":"microsoft.insights/components",
       "location":"Central US",
       "dependsOn":[
-        "[concat('Microsoft.Web/sites/', parameters('name'))]"
+        "[concat('Microsoft.Web/sites/', parameters('appName'))]"
       ],
       "tags":{
-        "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('name'))]":"Resource"
+        "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('appName'))]":"Resource"
       },
       "properties":{
-        "ApplicationId":"[parameters('name')]",
+        "ApplicationId":"[parameters('appName')]",
         "Request_Source":"IbizaWebAppExtensionCreate"
       }
     }
