@@ -16,5 +16,5 @@ Param(
 )
 
 Add-AzureKeyVaultKey -Destination Software -Name $Name -VaultName $VaultName
-$SecretValue = ConvertTo-SecureString $Secret -AsPlainText -Force
-Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Name -SecretValue $Secret
+$SecretSecureString = ConvertTo-SecureString $Secret -AsPlainText -Force
+Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Name -SecretValue $SecretSecureString
