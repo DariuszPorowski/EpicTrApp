@@ -1,0 +1,87 @@
+{
+  "parameters":{
+    "name":{
+      "defaultValue":"EpicTrApp",
+      "type":"string"
+    },
+    "sku":{
+      "defaultValue":"Standard",
+      "type":"string"
+    },
+    "workerSize":{
+      "defaultValue":"0",
+      "type":"string"
+    }
+  },
+  "variables":{
+    "apiVersion":"2015-08-01",
+    "apiVersionSites":"2015-01-01",
+    "apiVersionServerFarms":"2015-02-01",
+    "apiVersionInsights":"2014-04-01",
+    "location":"[resourceGroup().location]",
+    "subscriptionId":"[subscription().subscriptionId]",
+    "serverFarmResourceGroup":"[resourceGroup().name]",
+    "hostingPlanName":"[parameters('name')]"
+  },
+  "resources":[
+    {
+      "apiVersion":"[variables('apiVersion')]",
+      "name":"[parameters('name')]",
+      "type":"Microsoft.Web/sites",
+      "properties":{
+        "name":"[parameters('name')]",
+        "serverFarmId":"[concat('/subscriptions/', variables('subscriptionId'),'/resourcegroups/', variables('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]"
+      },
+      "resources":[
+        {
+          "apiVersion":"[variables('apiVersionSites')]",
+          "type":"providers/links",
+          "name":"Microsoft.Resources/sites",
+          "dependsOn":[
+            "[resourceId('microsoft.web/sites', parameters('name'))]"
+          ],
+          "properties":{
+            "targetId":"[resourceId('microsoft.insights/components', parameters('name'))]"
+          }
+        }
+      ],
+      "location":"[variables('location')]",
+      "tags":{
+        "[concat('hidden-related:', '/subscriptions/', variables('subscriptionId'),'/resourcegroups/', variables('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]":"empty"
+      },
+      "dependsOn":[
+        "[concat('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]"
+      ]
+    },
+    {
+      "apiVersion":"[variables('apiVersionServerFarms')]",
+      "name":"[variables('hostingPlanName')]",
+      "type":"Microsoft.Web/serverfarms",
+      "location":"[variables('location')]",
+      "properties":{
+        "name":"[variables('hostingPlanName')]",
+        "sku":"[parameters('sku')]",
+        "workerSizeId":"[parameters('workerSize')]",
+        "isLinux":false
+      }
+    },
+    {
+      "apiVersion":"[variables('apiVersionInsights')]",
+      "name":"[parameters('name')]",
+      "type":"microsoft.insights/components",
+      "location":"Central US",
+      "dependsOn":[
+        "[concat('Microsoft.Web/sites/', parameters('name'))]"
+      ],
+      "tags":{
+        "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('name'))]":"Resource"
+      },
+      "properties":{
+        "ApplicationId":"[parameters('name')]",
+        "Request_Source":"IbizaWebAppExtensionCreate"
+      }
+    }
+  ],
+  "$schema":"http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion":"1.0.0.0"
+}
