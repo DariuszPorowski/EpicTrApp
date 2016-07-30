@@ -9,18 +9,24 @@
 
     <Grid Background="Black">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <CaptureElement Grid.Row="0" x:Name="captureElement" />
-        <Image x:Name="previewImage" Grid.Row="0" Visibility="Collapsed"/>
-        <TextBlock Grid.Row="1" x:Name="hapinessRatio"
+        <TextBlock Text="TechReady Eval" Foreground="White" HorizontalAlignment="Center" Grid.Row="0" FontSize="24"/>
+        <Image Source="Assets/nj.jpg" Height="100" Grid.Row="1"/>
+        <Button Content="Switch camera" Grid.Row="2" Foreground="White" Visibility="Collapsed" x:Name="cameraSwitch"/>
+        <CaptureElement Grid.Row="3" x:Name="captureElement" />
+        <Image x:Name="previewImage" Grid.Row="4" Visibility="Collapsed"/>
+        <TextBlock Grid.Row="5" x:Name="hapinessRatio"
                    Margin="12"
                    Foreground="BlueViolet"
                    FontSize="24"
                    HorizontalAlignment="Center" />
-        <Button Grid.Row="2" x:Name="actionButton" 
+        <Button Grid.Row="6" x:Name="actionButton" 
                 Content="Take Picture" 
                 HorizontalAlignment="Stretch" 
                 Background="BlueViolet"
