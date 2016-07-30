@@ -1,5 +1,5 @@
 #
-# Add_KeyVaultSecret.ps1
+# Add key with secret to KeyVault
 #
 
 Param(

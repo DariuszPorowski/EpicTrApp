@@ -16,7 +16,7 @@
       "type": "String"
     },
     "objectId": {
-      "defaultValue": "841ee9b0-ceae-481f-933c-d0b652096d88",
+      "defaultValue": "00000000-0000-0000-0000-000000000000",
       "type": "String"
     },
     "skuFamily": {
@@ -28,7 +28,7 @@
       "type": "String"
     },
     "tenantId": {
-      "defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "defaultValue": "00000000-0000-0000-0000-000000000000",
       "type": "String"
     }
   },
