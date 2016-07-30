@@ -14,11 +14,16 @@ Param(
     [Parameter(Mandatory = $true)]
     [String]$Secret,
 	
+    [Parameter(Mandatory = $true)]
+    [String]$SPN,
+	
     [Parameter(Mandatory = $false)]
 	[ValidateSet("Software","HSM")] 
     [String]$Destination = 'Software'
 )
 
+Set-AzureRmKeyVaultAccessPolicy -ServicePrincipalName $SPN -VaultName $VaultName -PermissionsToKeys all -PermissionsToSecrets all
 Add-AzureKeyVaultKey -Destination $Destination -Name $Name -VaultName $VaultName
-#$SecretSecureString = ConvertTo-SecureString $Secret -AsPlainText -Force
-#Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Name -SecretValue $SecretSecureString
+$SecretSecureString = ConvertTo-SecureString $Secret -AsPlainText -Force
+Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Name -SecretValue $SecretSecureString
+Remove-AzureRmKeyVaultAccessPolicy -ServicePrincipalName $SPN -VaultName $VaultName
