@@ -12,9 +12,13 @@ Param(
     [String]$Name,
 
     [Parameter(Mandatory = $true)]
-    [String]$Secret
+    [String]$Secret,
+	
+    [Parameter(Mandatory = $false)]
+	[ValidateSet("Software","HSM")] 
+    [String]$Destination = 'Software'
 )
 
-Add-AzureKeyVaultKey -Destination Software -Name $Name -VaultName $VaultName
-$SecretSecureString = ConvertTo-SecureString $Secret -AsPlainText -Force
-Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Name -SecretValue $SecretSecureString
+Add-AzureKeyVaultKey -Destination $Destination -Name $Name -VaultName $VaultName
+#$SecretSecureString = ConvertTo-SecureString $Secret -AsPlainText -Force
+#Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Name -SecretValue $SecretSecureString
